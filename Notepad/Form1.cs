@@ -28,7 +28,7 @@ namespace Notepad
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog sv = new SaveFileDialog();
-            sv.Filter = "Text Documnet(*.txt)|*.txt|All Files(* , *)";
+            sv.Filter = "Text Documnet(*.txt)|*.txt|All Files(* , *)|";
             if (sv.ShowDialog() == DialogResult.OK)
                 richTextBox1.SaveFile(sv.FileName, RichTextBoxStreamType.PlainText);
             this.Text = sv.FileName;
@@ -74,7 +74,7 @@ namespace Notepad
             ColorDialog cd = new ColorDialog();
             if (cd.ShowDialog() == DialogResult.OK)
             {
-
+                richTextBox1.BackColor = cd.Color;
             }
         }
     }
